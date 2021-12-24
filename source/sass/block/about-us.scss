@@ -1,0 +1,163 @@
+.about-us {
+    display: flex;
+    flex-flow: row wrap;
+    padding-top: 100px;
+    padding-left: 176px;
+    padding-bottom: 96px;
+
+    h2 {
+        position: relative;
+        width: 100%;
+        margin: 0 0 64px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 172px;
+            width: 80px;
+            height: 80px;
+            background-image: url(/img/emoji-cowboy.png);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__text-wrapper {
+        position: relative;
+        width: 34%;
+        padding-top: 53px;
+        z-index: 1;
+
+        p {
+            margin: 0 0 32px;
+            @include font-setting(16px, 24px, 400, $black);
+
+            a {
+                text-decoration: underline;
+
+                &:hover,
+                &:focus {
+                    opacity: 0.8;
+                }
+
+                &:active {
+                    opacity: 0.6;
+                }
+            }
+        }
+    }
+
+    &__img-wrapper {
+        position: relative;
+        width: 50%;
+        margin-left: auto;
+        text-align: right;
+        z-index: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 54px;
+            left: -42px;
+            width: 504px;
+            height: 460px;
+            border-radius: 8px;
+            background-image: url(/img/img-background.jpg);
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        img {
+            position: relative;
+            border-radius: 8px;
+            z-index: 2;
+        }
+    }
+}
+
+@media (max-width: $fixed-width) {
+    .about-us {
+        padding-top: 55px;
+        padding-left: 44px;
+        padding-bottom: 16px;
+
+        h2 {
+            margin: 0 0 31px;
+
+            &::after {
+                top: -23px;
+                left: 94px;
+                transform: scale(0.60);
+            }
+        }
+
+        &__text-wrapper {
+            width: 47%;
+            padding-top: 0;
+        }
+
+        &__img-wrapper {
+            width: 45%;
+
+            &::after {
+                top: 30px;
+                left: 0;
+                width: 253px;
+                height: 254px;
+            }
+
+            img {
+                width: 278px;
+                height: 313px;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .about-us {
+        padding-top: 36px;
+        padding-left: 20px;
+        padding-bottom: 30px;
+
+        h2 {
+            margin: 0 0 31px;
+
+            &::after {
+                top: -28px;
+                left: 61px;
+                transform: scale(0.4);
+            }
+        }
+
+        &__text-wrapper {
+            width: 100%;
+            order: 1;
+
+            p {
+                margin: 0 0 57px;
+
+                &:last-of-type {
+                    margin: 0;
+                }
+            }
+        }
+
+        &__img-wrapper {
+            width: 100%;
+            margin-bottom: 29px;
+            order: 0;
+
+            &::after {
+                top: 27px;
+                width: 253px;
+                height: 231px;
+            }
+
+            img {
+                width: 254px;
+                height: 285px;
+            }
+        }
+    }
+}

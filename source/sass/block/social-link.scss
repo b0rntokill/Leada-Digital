@@ -1,0 +1,32 @@
+.social-link {
+    display: flex;
+
+    & li {
+        margin-left: 20px;
+    }
+
+    &__link {
+        display: block;
+
+        &--instagram {
+            padding-top: 2px;
+        }
+    }
+}
+
+@media (max-width: $fixed-width) {
+    .social-link {
+        & li {
+            margin-left: 19px;
+        }
+    }
+}
+
+@media (max-width: $fixed-width) {
+    .social-link {
+        & li {
+            margin-right: 19px;
+            margin-left: 0;
+        }
+    }
+}

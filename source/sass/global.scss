@@ -1,0 +1,93 @@
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: $default-font;
+    background-color: $white;
+    min-width: 320px;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1;
+}
+
+a {
+    text-decoration: none;
+    cursor: url(/img/custom-cursor.png), auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.container {
+    @include breakpoint;
+}
+
+h2.main-title {
+    margin: 0;
+    @include font-setting(48px, 56px, 700);
+
+    @media (max-width: $fixed-width) {
+        @include font-setting(30px, 36px, 700);
+    }
+
+    @media (max-width: $mobile-width) {
+        @include font-setting(24px, 26px, 700);
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-width: 150px;
+    min-height: 48px;
+    font-family: $second-font;
+    @include font-setting(18px, 24px, 500, $white);
+    border: none;
+    border-radius: 48px;
+    background-color: $black;
+    cursor: url(/img/custom-cursor.png), auto;
+    transition: background-color 0.4s;
+
+    &:hover,
+    &:focus {
+        color: $black;
+        background-color: $white;
+    }
+
+    &:active {
+        opacity: 0.6;
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "declaration-no-important": true,
+    "indentation": [4, {"ignore": ["inside-parens"]}]
+  }
+}

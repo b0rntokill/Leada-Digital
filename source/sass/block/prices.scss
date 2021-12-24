@@ -1,0 +1,222 @@
+.prices {
+    padding-top: 100px;
+    padding-bottom: 108px;
+    background-color: $black;
+
+    h2 {
+        position: relative;
+        margin-bottom: 72px;
+        color: $white;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -29px;
+            left: 425px;
+            width: 98px;
+            height: 98px;
+            background-image: url(/img/emoji-price.png);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0;
+        padding: 0;
+        counter-reset: number;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        width: 544px;
+        margin-bottom: 32px;
+        padding: 55px 31px 31px;
+        list-style-type: none;
+        counter-increment: number;
+        border: 1px solid $border-white-color;
+        border-radius: 8px;
+
+        &:nth-of-type(odd) {
+            margin-right: 32px;
+        }
+
+        &::before {
+            content: "0"counter(number);
+            position: absolute;
+            top: 31px;
+            left: 31px;
+            @include font-setting(14px, 20px, 400, $white);
+        }
+
+        &:nth-of-type(n + 10)::before {
+            content: counter(number);
+        }
+
+        h3 {
+            margin: 0 0 25px;
+            @include font-setting(22px, 26px, 700, $white);
+        }
+
+        ul {
+            display: flex;
+            flex-flow: column;
+            margin-bottom: 31px;
+            padding-left: 25px;
+
+            li {
+                position: relative;
+                @include font-setting(16px, 24px, 400, $white);
+
+                &:not(:last-of-type) {
+                    margin-bottom: 8px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: -14px;
+                    width: 2px;
+                    height: 2px;
+                    border-radius: 50%;
+                    background-color: $white;
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+
+    &__price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        margin: 0;
+
+        &--more-txt {
+            margin-bottom: -8px;
+        }
+
+        span {
+            width: 65%;
+            @include font-setting(16px, 24px, 400, $white);
+
+            b {
+                @include font-setting(18px, 24px, 700, $white);
+            }
+        }
+
+        button {
+            @include font-setting(15px, 24px, 500, $white);
+            border: 1px solid $white;
+        }
+    }
+}
+
+@media (max-width: $fixed-width) {
+    .prices {
+        padding-top: 50px;
+        padding-bottom: 31px;
+
+        h2 {
+            margin-bottom: 30px;
+
+            &::after {
+                top: -33px;
+                left: 253px;
+                transform: scale(0.65);
+            }
+        }
+
+        &__list {
+            flex-flow: column;
+        }
+
+        &__item {
+            flex-flow: column;
+            width: 100%;
+            margin-bottom: 16px;
+            padding: 44px 19px 19px;
+
+            &:nth-of-type(odd) {
+                margin-right: 0;
+            }
+
+            &::before {
+                top: 19px;
+                left: 19px;
+            }
+
+            h3 {
+                margin: 0 0 25px;
+                @include font-setting(18px, 24px, 700, $white);
+            }
+
+            ul {
+                margin-bottom: 14px;
+            }
+        }
+
+        &__price {
+            &--more-txt {
+                margin-bottom: 0;
+            }
+
+            span {
+                b {
+                    letter-spacing: -1.2px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .prices {
+        padding-top: 33px;
+        padding-bottom: 17px;
+
+        h2 {
+            margin-bottom: 15px;
+
+            &::after {
+                top: -38px;
+                left: 193px;
+                transform: scale(0.47);
+            }
+        }
+
+        &__item {
+            padding: 43px 19px 19px;
+
+            &::before {
+                top: 19px;
+                left: 19px;
+            }
+
+            ul {
+                margin-bottom: 16px;
+            }
+        }
+
+        &__price {
+            flex-flow: column;
+            align-items: flex-start;
+            align-content: flex-start;
+
+            span {
+                width: 95%;
+                margin-bottom: 14px;
+
+                b {
+                    letter-spacing: -1.2px;
+                }
+            }
+        }
+    }
+}

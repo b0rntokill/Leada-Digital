@@ -1,0 +1,198 @@
+.services {
+    padding-top: 100px;
+    padding-bottom: 96px;
+
+    h2 {
+        position: relative;
+        margin-bottom: 64px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 197px;
+            width: 80px;
+            height: 80px;
+            background-image: url(/img/emoji-star.png);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0;
+        padding: 0;
+        counter-reset: number;
+    }
+
+    &__item {
+        position: relative;
+        width: 370px;
+        min-height: 289px;
+        margin-right: 5px;
+        margin-bottom: 4px;
+        padding: 44px 20px 160px;
+        border: 1px solid $border-gray-color;
+        border-radius: 8px;
+        list-style-type: none;
+        counter-increment: number;
+        transition: background-color 0.4s;
+
+        &--large {
+            width: 558px;
+            min-height: 142px;
+            padding: 44px 20px 55px;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: $black;
+        }
+
+        &:hover,
+        &:focus {
+            &::before,
+            h3,
+            span {
+                color: $white;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            span svg {
+                margin-left: 21px;
+                fill: $white;
+            }
+        }
+
+        &:active {
+            opacity: 0.6;
+        }
+
+        &::before {
+            content: "0"counter(number);
+            position: absolute;
+            top: 19px;
+            left: 19px;
+            @include font-setting(14px, 20px, 400, $black);
+        }
+
+        &:nth-of-type(n + 10)::before {
+            content: counter(number);
+        }
+
+        &:nth-child(5n-2) {
+            margin-right: 0;
+        }
+
+        &:nth-child(5n-6) {
+            margin-right: 4px;
+        }
+
+        &:nth-child(5n) {
+            margin-right: 0;
+        }
+
+        h3 {
+            margin: 0;
+            @include font-setting(22px, 26px, 700, $black);
+        }
+
+        img {
+            position: absolute;
+            right: 31px;
+            bottom: 31px;
+        }
+
+        span {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            left: 22px;
+            bottom: 30px;
+            font-family: "Ubuntu", sans-serif;
+            @include font-setting(15px, 24px, 500, $black);
+
+            svg {
+                margin-left: 13px;
+                fill: $black;
+                transition: margin-left 0.8s;
+            }
+        }
+    }
+}
+
+@media (max-width: $fixed-width) {
+    .services {
+        padding-top: 50px;
+        padding-bottom: 44px;
+
+        h2 {
+            margin-bottom: 30px;
+
+            &::after {
+                top: -24px;
+                left: 110px;
+                transform: scale(0.60);
+            }
+        }
+
+        &__item {
+            width: 224px;
+            min-height: 224px;
+            margin-right: 4px;
+            padding: 44px 16px 55px 20px;
+
+            &--large {
+                width: 338px;
+                min-height: 164px;
+            }
+
+            h3 {
+                margin: 0;
+                @include font-setting(18px, 24px, 700, $black);
+            }
+
+            img {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .services {
+        padding-top: 33px;
+        padding-bottom: 28px;
+
+        h2 {
+            margin-bottom: 15px;
+
+            &::after {
+                top: -28px;
+                left: 79px;
+                transform: scale(0.42);
+            }
+        }
+
+        &__item {
+            width: 100%;
+            min-height: 156px;
+
+            margin-right: 0;
+            padding: 43px 16px 30px 20px;
+
+            &--large {
+                width: 100%;
+                min-height: 156px;
+            }
+
+            span {
+                bottom: 12px;
+            }
+        }
+    }
+}

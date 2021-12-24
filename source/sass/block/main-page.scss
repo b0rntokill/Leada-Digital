@@ -1,0 +1,97 @@
+.main-page {
+    position: relative;
+    margin-top: -102px;
+    padding: 212px 0 96px;
+    background-image: url(/img/main-bgr.jpg);
+    background-position: 50%, 50%;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    @media (min-width: 2560px) {
+        background-size: cover;
+    }
+
+    &--sticky-fix {
+        margin-top: 0;
+    }
+
+    h1 {
+        position: relative;
+        width: 500px;
+        margin: 0 0 33px;
+        font-family: $main-slogan-font;
+        @include font-setting(100px, 90px, 900, $black);
+        letter-spacing: 1.9px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 39px;
+            right: -286px;
+            width: 160px;
+            height: 160px;
+            background-image: url(/img/emoji-love.png);
+            background-repeat: no-repeat;
+        }
+    }
+
+    p {
+        margin: 0 0 31px;
+        @include font-setting(22px, 26px, 500, $black);
+    }
+
+    &__btn {
+        min-width: 229px;
+        min-height: 72px;
+    }
+}
+
+@media (max-width: $fixed-width) {
+    .main-page {
+        margin-top: -126px;
+        padding: 158px 0 64px;
+
+        h1 {
+            @include font-setting(80px, 72px, 900, $black);
+            letter-spacing: 1.8px;
+
+            &::after {
+                top: 63px;
+                right: -158px;
+                transform: scale(0.64);
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .main-page {
+        margin-top: -77px;
+        padding: 113px 0 46px;
+
+        &--sticky-fix {
+            margin-top: 0;
+        }
+
+        & h1 {
+            width: 100%;
+            margin: 0 0 24px;
+            @include font-setting(40px, 42px, 900, $black);
+            letter-spacing: 0.8px;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        & p {
+            width: 70%;
+            margin: 0 0 23px;
+        }
+
+        &__btn {
+            min-width: 189px;
+            min-height: 48px;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import
+    "normalize",
+    "fonts",
+    "variables",
+    "mixins",
+    "global";
+
+// lib
+@import
+    "lib/owl-slider";
+
+// block
+@import
+    "block/header",
+    "block/main-page",
+    "block/services",
+    "block/prices",
+    "block/about-us",
+    "block/cases",
+    "block/our-client",
+    "block/footer",
+    "block/modal-overlay",
+    "block/callback-modal",
+    "block/callback-form",
+    "block/message",
+    "block/social-link";

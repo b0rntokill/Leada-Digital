@@ -1,0 +1,94 @@
+.callback-form {
+    display: flex;
+    flex-flow: column;
+
+    &__inner-wrapper {
+        margin-bottom: 12px;
+
+        &--btn {
+            display: flex;
+            flex-flow: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+    }
+
+    &__input-wrapper {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    & label {
+        margin-bottom: 8px;
+        font-family: "Ubuntu", sans-serif;
+        @include font-setting(14px, 18px, 500);
+    }
+
+    & input {
+        height: 48px;
+        padding: 5px 11px;
+        font-family: "Ubuntu", sans-serif;
+        @include font-setting(15px, 20px, 400);
+        border: 1px solid $border-white-color;
+        border-radius: 8px;
+
+        &:hover,
+        &:focus {
+            border-color: $black;
+            outline: none;
+        }
+
+        &:active {
+            border-color: $black;
+            outline: none;
+        }
+
+        //&:invalid {
+        //    border-color: $error-color;
+        //}
+    }
+
+    &__btn {
+        flex-shrink: 0;
+        width: 160px;
+        height: 48px;
+        @include font-setting(15px, 24px, 500, $white);
+
+        &:hover,
+        &:focus {
+            color: $white;
+            background-color: $gray;
+        }
+
+        &:active {
+            opacity: 0.6;
+        }
+    }
+
+    &__tips {
+        margin-left: 24px;
+        @include font-setting(12px, 16px, 500, $black);
+    }
+}
+
+@media (max-width: $mobile-width) {
+    .callback-form {
+        &__inner-wrapper {
+            margin-bottom: 13px;
+        }
+
+        &__tips {
+            margin-left: 16px;
+        }
+    }
+}
